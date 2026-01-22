@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
-import "./globals.css";
-import Navbar from "../src/components/Navbar";
-import Footer from "../src/components/Footer";
-
-const jost = Jost({
-  variable:'--gont-jost',
-  subsets:['latin'],
-})
+import "../globals.css";
+import Navbar from "@/src/components/Navbar";
+import Footer from "@/src/components/Footer";
 
 export const metadata: Metadata = {
   title: "Nike",
@@ -20,14 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${jost.className} antialiased`}
-      >
+    <html>
+      <body>
         <Navbar/>
         {children}
         <Footer/>
+
       </body>
+      
     </html>
   );
 }

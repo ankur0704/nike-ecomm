@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../src/components/Card'
+import Card from '@/src/components/Card'
 
 const Home = () => {
   // Placeholder data for latest shoes
