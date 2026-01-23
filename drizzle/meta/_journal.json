@@ -8,6 +8,20 @@
       "when": 1769070062664,
       "tag": "0000_light_drax",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1769160504552,
+      "tag": "0001_foamy_secret_warriors",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1769164131873,
+      "tag": "0002_strange_scorpion",
+      "breakpoints": true
     }
   ]
 }

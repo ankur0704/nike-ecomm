@@ -1,15 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useActionState } from 'react';
 import Link from 'next/link';
 import AuthForm from '@/src/components/AuthForm';
 import SocialProviders from '@/src/components/SocialProviders';
+import { signIn } from '@/lib/auth';
 
 export default function SignInPage() {
-  const handleSignIn = (data: { email: string; password: string }) => {
-    // TODO: Implement authentication logic
-    console.log('Sign in:', data);
-  };
+  const [state, action] = useActionState(signIn, null);
 
   const handleGoogleSignIn = () => {
     // TODO: Implement Google OAuth
@@ -34,7 +32,10 @@ export default function SignInPage() {
       </div>
 
       {/* Auth Form */}
-      <AuthForm type="sign-in" onSubmit={handleSignIn} />
+      <AuthForm type="sign-in" formAction={action} />
+      {state?.error && (
+        <p className="mt-4 text-sm text-[var(--color-red)] text-center">{state.error}</p>
+      )}
 
       {/* Social Providers */}
       <div className="mt-8">
